@@ -81,7 +81,7 @@ def newentry():
         except:
             error="ERR002 - saving new event form to database"
             return render_template('companion/dberror.html',error=error)
-        '''
+        
         # Increment number for next use
         num=num+1
 
@@ -97,7 +97,7 @@ def newentry():
         except:
             error="ERR-003 - event number not increased"
             return render_template('companion/dberror.html',error=error)
-        '''
+
 
         return render_template('companion/crud-goodsavedentry.html')
     return render_template('companion/crud-new.html',form=form,stamp=stamp)

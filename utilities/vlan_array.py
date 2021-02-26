@@ -27,7 +27,7 @@ from pyhpecfm import fabric
 def get_vlans():
 
     # Get user informaation.
-    creds=Sidekick.objects.first()
+    creds=Companion.objects.first()
     username=creds.user.encode('utf-8')
     ipaddress=creds.ipaddress.encode('utf-8')
     password=creds.passwd.encode('utf-8')
