@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Companion</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+    />
+    <!-- https://fonts.google.com/specimen/Open+Sans -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/fontawesome.min.css') }}" />
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css' ) }}"/>
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/templatemo-style.css' ) }}"/>
+    <style type="text/css">
+textarea {
+ width: 300px;
+ height: 100px;
+ background-color: yellow;
+ font-size: 1em;
+ font-weight: bold;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ border: 1px solid black;
+}
+</style>
+    <!--
+	Project Companion CSS Template
+	-->
+  </head>
+  <body>
+
+    <div class="container">
+
+    {% block content %}{% endblock %}
+
+      <div class="col-md-offset-3 col-md-6">
+        <hr/>
+        <footer class="tm-footer row tm-mt-small">
+          <div class="col-12 font-weight-light">
+            <p class="text-center text-white mb-0 px-4 small">
+              Released as open source
+              Brought to you by: <a rel="nofollow noopener" href="https://wookieware.com" class="tm-footer-link">Wookieware</a>
+            </p>
+          </div>
+        </footer>
+      </div>
+
+    </div>
+
+    {% block end_body_js %}
+    <script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js')}}"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="{{ url_for('static',filename='js/moment.min.js')}}"></script>
+    <!-- https://momentjs.com/ -->
+    <script src="{{ url_for('static',filename='js/Chart.min.js')}}"></script>
+    <!-- http://www.chartjs.org/docs/latest/ -->
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <!-- https://getbootstrap.com/ -->
+    <script src="{{ url_for('static',filename='js/tooplate-scripts.js')}}"></script>
+    <script>
+      $(function() {
+        $(".tm-product-name").on("click", function() {
+          window.location.href = "edit-product.html";
+        });
+      });
+    </script>
+    <script>
+        Chart.defaults.global.defaultFontColor = 'white';
+        let ctxLine,
+            ctxBar,
+            ctxPie,
+            optionsLine,
+            optionsBar,
+            optionsPie,
+            configLine,
+            configBar,
+            configPie,
+            lineChart;
+        barChart, pieChart;
+        // DOM is ready
+        $(function () {
+            drawLineChart(); // Line Chart
+            drawBarChart(); // Bar Chart
+
+
+            $(window).resize(function () {
+                updateLineChart();
+                updateBarChart();
+            });
+        })
+    </script>
+    {%  endblock %}
+  </body>
+</html>

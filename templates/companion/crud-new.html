@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}Companion{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+    <div class="container tm-mt-big tm-mb-big">
+      <div class="row">
+        <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+          <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="tm-block-title d-inline-block">Add Log Entry</h2>
+              </div>
+            </div>
+            <div class="row tm-edit-product-row">
+               {% from "_formhelpers.html" import render_field %}
+              <form  class="tm-edit-product-form" method="POST" action="{{ url_for('.newentry')}}" role="form">
+                {{ form.hidden_tag() }}
+                <div class="col-sm-12">
+                  <table class="table">
+                    <tr>
+                      <td>
+                        <div class="form-group mb-3">
+                          <label
+                            for="num"
+                            >Record Number
+                          </label>
+                          <input
+                            style="background-color:gray;"
+                            id="num"
+                            name="num"
+                            type="text"
+                            value={{stamp[2]}}
+                            class="form-control validate"
+                            readonly
+                          />
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-group mb-3">
+                          <label
+                            for="user"
+                            >System User
+                          </label>
+                          <input
+                            style="background-color:gray;"
+                            id="user"
+                            name="user"
+                            type="text"
+                            value={{stamp[0]}}
+                            class="form-control validate"
+                            readonly
+                          />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group mb-3">
+                          <label
+                            for="now"
+                            >Time Stamp
+                          </label>
+                          <input
+                            style="background-color:gray;"
+                            id="now"
+                            name="now"
+                            type="text"
+                            value={{stamp[1]}}
+                            class="form-control validate"
+                            readonly
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+              </diV>
+
+
+                <div class="row tm-edit-product-row">
+                  <table class="table">
+                    <tr>
+                      <td>
+                  <div class="form-group mb-12">
+                    <label
+                      for="message"
+                      >Message</label
+                    >
+                    <textarea
+                    style="background-color:gray;"
+                      class="form-control validate"
+                      rows="6"
+                      name="message"
+                      required
+                    ></textarea>
+                  </td>
+                  <td>
+                    <div class="row tm-edit-product-row">
+                      <div class="form-group mb-12">
+                        <label
+                          for="concern"
+                          >Concern</label
+                        >
+                        <textarea
+                        style="background-color:gray;"
+                          class="form-control validate"
+                          rows="6"
+                          name="concern"
+                          required
+                        ></textarea
+                    </td>
+                  </tr>
+                </table>
+            </div>
+
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-block text-uppercase">Save Log Entry</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

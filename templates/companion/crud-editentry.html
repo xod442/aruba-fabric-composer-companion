@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Entry{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="col-xs-10">
+    <h3>Edit Entry</h3>
+
+    {% from "_formhelpers.html" import render_field %}
+    <form  class="tm-edit-product-form" method="POST" action="{{ url_for('.upentry')}}" role="form">
+
+      <div class="col-sm-12">
+        <table class="table">
+          <tr>
+            <td>
+              <div class="form-group mb-3">
+                <label
+                  for="num"
+                  >Record Number
+                </label>
+                <input
+                  style="background-color:gray;"
+                  id="num"
+                  name="num"
+                  type="text"
+                  value={{stamp.num}}
+                  class="form-control validate"
+                  readonly
+                />
+              </div>
+            </td>
+            <td>
+              <div class="form-group mb-3">
+                <label
+                  for="user"
+                  >System User
+                </label>
+                <input
+                  style="background-color:gray;"
+                  id="user"
+                  name="user"
+                  type="text"
+                  value={{stamp.user}}
+                  class="form-control validate"
+                  readonly
+                />
+              </div>
+          </td>
+          <td>
+              <div class="form-group mb-3">
+                <label
+                  for="now"
+                  >Time Stamp
+                </label>
+                <input
+                  style="background-color:gray;"
+                  id="now"
+                  name="now"
+                  type="text"
+                  value={{stamp.now}}
+                  class="form-control validate"
+                  readonly
+                />
+              </div>
+            </td>
+          </tr>
+        </table>
+    </diV>
+
+
+      <div class="row tm-edit-product-row">
+        <table class="table">
+          <tr>
+            <td>
+        <div class="form-group mb-12">
+          <label for="message">Message</label>
+          <textarea
+          style="background-color:gray;"
+            class="form-control validate"
+            rows="6"
+            name="message"
+            required
+          >{{stamp.message}}</textarea>
+        </td>
+        <td>
+          <div class="row tm-edit-product-row">
+            <div class="form-group mb-12">
+              <label
+                for="concern"
+                >Concern</label
+              >
+              <textarea
+              style="background-color:gray;"
+                class="form-control validate"
+                rows="6"
+                name="concern"
+                required
+              >{{stamp.concern}}</textarea>
+          </td>
+        </tr>
+      </table>
+  </div>
+
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary btn-block text-uppercase">Save Edit</button>
+    </div>
+  </form>
+
+{% endblock %}

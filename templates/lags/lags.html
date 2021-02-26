@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Companion{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+    <div class="" id="home">
+
+        <div class="container">
+
+                <!-- Start of the table container... -->
+                    <h1> Aruba Fabric Composer Lag Report </h1>
+
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">&nbsp;</th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Mode</th>
+                                  <th scope="col">Speed</th>
+                                  <th scope="col">Partner Status</th>
+                                  <th scope="col">Partner System</th>
+                                  <th scope="col">Partner Port</th>
+                                  <th scope="col">Actor</th>
+                                  <th scope="col">&nbsp;</th>
+                                </tr>
+                              </thead>
+                                      <tbody>
+                                      {% for prop in l%}
+                                        <tr>
+                                          <th scope="row"><input type="checkbox"></th>
+                                          <td class="tm-product-name">{{ prop['properties']['name'] }}</td>
+
+                                          <td class="tm-product-name">{{ prop['properties']['mode'] }}</td>
+
+                                          <td class="tm-product-name">{{ prop['properties']['speed'] }}</td>
+
+                                          <td class="tm-product-name">{{ prop['properties']['partner_status'] }}</td>
+
+                                          <td class="tm-product-name">{{ prop['properties']['partner_system'] }}</td>
+
+                                         <td class="tm-product-name">{{ prop['properties']['partner_port_state'] }}</td>
+
+                                        <td class="tm-product-name">{{ prop['properties']['actor_status'] }}</td>
+                                      <td>
+                                        <a href="#" class="tm-product-delete-link">
+                                          <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                        </a>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tm-product-name"><bold>Assigned Ports</bold></td>
+                                    </tr>
+
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">&nbsp;</th>
+                                        <th scope="col">Switch Name</th>
+                                        <th scope="col">Port</th>
+                                        <th scope="col">Link State</th>
+                                        <th scope="col">Admin State</th>
+                                        <th scope="col">Port Security</th>
+                                        <th scope="col">Loop Detection</th>
+                                        <th scope="col">Vlans</th>
+                                        <th scope="col">&nbsp;</th>
+                                      </tr>
+                                    </thead>
+
+
+                                {% for port in prop['properties']['ports'] %}
+                                  <tr>
+                                    <th scope="row"><input type="checkbox"></th>
+                                    <td class="tm-product-name">{{ port['switch_name'] }}</td>
+
+                                    <td class="tm-product-name">{{ port['port_label'] }}</td>
+
+                                    <td class="tm-product-name">{{ port['link_state'] }}</td>
+
+                                    <td class="tm-product-name">{{ port['admin_state'] }}</td>
+
+                                    <td class="tm-product-name">{{ port['port_security_enabled'] }}</td>
+
+                                    <td class="tm-product-name">{{ port['bridge_loop_detection']['mode'] }}</td>
+
+                                    <td class="tm-product-name">{{ port['vlans'] }}</td>
+                                <td>
+                                  <a href="#" class="tm-product-delete-link">
+                                    <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                  </a>
+                                </td>
+                              </tr>
+                              {% endfor %}
+                              {% endfor %}
+
+                              </tbody>
+                            </table>
+
+                          </div>
+                <!-- End of the table container. -->
+
+            <div id="pieChartContainer">
+                <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
+            </div>
+        </div>
+{% endblock %}

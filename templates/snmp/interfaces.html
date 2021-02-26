@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Companion{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+    <div class="" id="home">
+        <div class="container">
+                <!-- Start of the table container. -->
+                  <div class="container mt-5">
+                    <h1> Aruba Fabric Composer SNMP Interfaces for {{ ipaddress }} </h1>
+                    <div class="row tm-content-row">
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
+                        <div class="tm-bg-primary-dark tm-block tm-block-products">
+                          <div class="tm-product-table-container">
+                            <table class="table table-hover tm-table-big tm-product-table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Interface</th>
+                                  <th scope="col">Desc</th>
+                                  <th scope="col">Type</th>
+                                  <th scope="col">MTU</th>
+                                  <th scope="col">Speed</th>
+                                  <th scope="col">Admin Status</th>
+                                  <th scope="col">Oper Status</th>
+                                  <th scope="col">Pkts In</th>
+                                  <th scope="col">Pkts Out</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {% for port in output%}
+                                <tr>
+                                  <td class="tm-product-name">{{ port.interface }}</td>
+                                  <td>{{ port.ifDesc }}</td>
+                                  <td>{{ port.ifType }}</td>
+                                  <td>{{ port.ifMtu }}</td>
+                                  <td>{{ port.ifSpeed }}</td>
+                                  <td>{{ port.ifAdminStatus }}</td>
+                                  <td>{{ port.ifOperStatus }}</td>
+                                  <td>{{ port.ifInUcastPkts }}</td>
+                                  <td>{{ port.ifOutUcastPkts }}</td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of the table container. -->
+
+            <div id="pieChartContainer">
+                <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
+            </div>
+        </div>
+{% endblock %}

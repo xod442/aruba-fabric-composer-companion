@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Help{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+
+<ul class="flashes">
+    {% for message in messages %}
+    <p style=  "color:#ff0000;">
+    <li>{{ message}}</li>
+    {% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endwith %}
+
+<div class="col-xs-10">
+    <h1>Help for Companion</h1>
+    <p>The User Log is a basic CRUD application. It CREATES, READS, UPDATES, DELETE and CLONE</p>
+    <p>
+    <h3> Functions for the User Log </h3>
+    <b> New Entry</b>
+
+    <p>The Record number, System user, and Date are all auto populated with the current timestamp.
+      In the field are two text areas to enter additional information. The Entry field is for
+      any notes, comment, dates, and relavant data.<p>
+
+    <p>The Comment/Issues area is for anythin that may casue an imapct into what the event is about.<p>
+
+    <p>Once complete click the button at the bottom of the screen.<p>
+
+    <b> List Entry</b>
+
+    <p>List all the entries in the database for the current System User.<p>
+
+
+    <b> Delete Entry</b>
+
+    <p>Choose the entry number to delete.<p>
+
+    <b> Edit Entry</b>
+
+    <p>Choose the entry number to Edit.<p>
+
+    <b> Edit Entry</b>
+
+    <p>Choose the entry number to Edit.<p>
+
+      <b> Clone Entry</b>
+
+      <p>Choose the entry number to Clone. Cloning an entry copies the record to a new date and record number.
+        Use this if you were working on an entry in the past and you have returned to the
+        same task.<p>
+
+      <h3> StackStorm </h3>
+        <ul>
+          <li><b> Run an action</b></li>
+
+          <li><b> Run an action</b></li>
+        </ul>
+
+
+      <h3> AFC API </h3>
+        <ul>
+          <li><b> List Fabric Modules</b></li>
+
+          <li><b> List Fabrics</b></li>
+        </ul>
+
+
+  </div>
+
+</div>
+{% endblock %}

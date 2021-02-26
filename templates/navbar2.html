@@ -1,0 +1,73 @@
+
+<!-- Navigation bar-->
+
+<div class="" id="home">
+  <nav class="navbar navbar-expand-xl">
+      <div class="container h-100">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="{{ url_for('main_app.main') }}">
+            <img alt="companion logo" width="80" height="80" src="{{ url_for('static', filename='assets/dog.PNG') }}"></a>
+        Companion for Aruba Fabric Composer
+        </div>
+          <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-bars tm-nav-icon"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="main_return">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('main_app.main_logout') }}">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="help">Help!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://www.wookieware.com" class="navbar-link">About</a>
+                </li>
+
+
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      User Log
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="{{ url_for('companion_app.newentry') }}">New Entry</a>
+                      <a class="dropdown-item" href="{{ url_for('companion_app.listentry') }}">List Entries</a>
+                      <a class="dropdown-item" href="{{ url_for('companion_app.deleteentry') }}">Delete Entry</a>
+                      <a class="dropdown-item" href="{{ url_for('companion_app.editentry') }}">Edit Entry</a>
+                      <a class="dropdown-item" href="{{ url_for('companion_app.cloneentry') }}">Clone Entry</a>
+                    </div>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      StackStorm
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Run An Action</a>
+                        <a class="dropdown-item" href="{{ url_for('companion_app.newterm') }}">Open terminal</a>
+                        <a class="dropdown-item" href="http://127.0.0.1:80" target="_blank">St2 WebUI</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      CFM API
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">List Fabric Mods</a>
+                        <a class="dropdown-item" href="#">List Fabric(s)</a>
+                    </div>
+                </li>
+            </ul>
+          </div>
+      </div>
+
+  </nav>
+</div>

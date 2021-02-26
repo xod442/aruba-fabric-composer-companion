@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}LAGs Created{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="col-xs-10">
+
+    <h3>Auto Lag Succeeded!</h3>
+    <form action = "{{ url_for('main_app.main_return') }}" method = "get">
+    <h2> Link aggregation groups have been created in the AFC</h2>
+    <p> Please return to the main menu </p>
+
+
+  </div>
+<hr>
+<div class="col-12">
+  <button type="submit" class="btn btn-primary btn-block text-uppercase">Return Main Menu</button>
+</div>
+</form>
+</div>
+{% endblock %}

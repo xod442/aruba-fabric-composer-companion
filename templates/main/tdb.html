@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Companion{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+    <div class="" id="home">
+      <h3> Switch database records
+
+        <div class="container">
+            <!-- row -->
+            <!-- row -->
+                <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <h2 class="tm-block-title">Switch Inventory</h2>
+                        <table class="table">
+                          <thead><tr>
+                          <th>Health</th><th>IP address</th><th>MAC address</th><th>Name</th><th>SW Version</th>
+                           </tr></thead>
+                             <tbody>
+                                 {% for i in s%}
+                                   <tr>
+                                   <td>{{ i[0] }}</td>
+                                   <td>{{ i[1] }}</td>
+                                   <td>{{ i[2] }}</td>
+                                   <td>{{ i[3] }}</td>
+                                   <td>{{ i[4] }}</td>
+                                  <tr>
+                                {% endfor %}
+                           </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+            <div id="pieChartContainer">
+                <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
+            </div>
+        </div>
+{% endblock %}

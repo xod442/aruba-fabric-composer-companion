@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Companion{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+    <div class="" id="home">
+
+        <div class="container">
+
+                <!-- Start of the table container. -->
+                  <div class="container mt-5">
+                    <h1>  Aruba Fabric Composer Alarms </h1>
+                    <div class="row tm-content-row">
+                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
+                        <div class="tm-bg-primary-dark tm-block tm-block-products">
+                          <div class="tm-product-table-container">
+                            <table class="table table-hover tm-table-big tm-product-table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">&nbsp;</th>
+                                  <th scope="col">Event Type</th>
+                                  <th scope="col">Severity</th>
+                                  <th scope="col">Type</th>
+                                  <th scope="col">Description</th>
+                                  <th scope="col">&nbsp;</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {% for i in a%}
+                                <tr>
+                                  <th scope="row"><input type="checkbox"></th>
+                                  <td class="tm-product-name">{{ i[0] }}</td>
+                                  <td>{{ i[1] }}</td>
+                                  <td>{{ i[2] }}</td>
+                                  <td>{{ i[3] }}</td>
+                                  <td>
+                                    <a href="#" class="tm-product-delete-link">
+                                      <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of the table container. -->
+
+            <div id="pieChartContainer">
+                <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
+            </div>
+        </div>
+{% endblock %}

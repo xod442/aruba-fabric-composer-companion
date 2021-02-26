@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Companion{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<h2> Autolag!</h2>
+
+  <h3> Select A-side, B-side switches and vlan </h3>
+  <form  method="POST" action="{{ url_for('.makelags')}}">
+
+    <div class="form-group">
+          <label for="sel1">VLAN:</label>
+            <select name ="vlan">
+              <option value='no select'>None selected</option>
+                {% for vlan in vlans %}
+                  <option value={{vlan[1]}}>{{vlan[0]}}</option>
+                  {% endfor %}
+                  </select>
+                      </div>
+
+                     <hr>
+
+<div class="form-group">
+          <label for="sel1">Select A-Side Switch:</label>
+          <select  name ="a_switch">
+            <option value='no select'>None selected</option>
+            {% for switch in switches %}
+              <option value={{switch[1]}}>{{switch[0]}}</option>
+              {% endfor %}
+            </select>
+          </div>
+<div class="form-group">
+          <label for="sel1">Select B-side Switch:</label>
+          <select  name ="b_switch">
+            <option value='no select'>None selected</option>
+            {% for switch in switches %}
+              <option value={{switch[1]}}>{{switch[0]}}</option>
+              {% endfor %}
+              </select>
+      </div>
+
+      <div class="form-group">
+                <label for="sel1">Total of LAGS:</label>
+                <select  name ="count">
+                  {% for num in count %}
+                    <option value={{num}}>{{num}}</option>
+                    {% endfor %}
+                    </select>
+            </div>
+
+
+    <br>
+    <hr>
+    <button type="submit" class="btn btn-primary btn-block text-uppercase">Lags!</button>
+    </form>
+  </div>
+
+{% endblock %}

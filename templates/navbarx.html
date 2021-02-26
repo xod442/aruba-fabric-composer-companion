@@ -1,0 +1,29 @@
+
+
+<!-- Navigation bar-->
+<div id="app" class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="{{ url_for('main_app.main') }}">
+              <img alt="antigua logo" width="80" height="80" src="{{ url_for('static', filename='assets/dog.PNG') }}">
+          Companion for Aruba Fabric Composer</a>
+      </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="main">Login<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="help">Help!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://www.wookieware.com" class="navbar-link">About</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>

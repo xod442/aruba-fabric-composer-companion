@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block title %}Delete{% endblock %}
+
+{% block header %}<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+
+
+<h2> Delete Log Entry</h2>
+
+  <p> Choose the number from the drop down list CAUTION!!!! Deleteing record is permanent</p>
+
+  <form  method="POST" action="{{ url_for('.deleteentry')}}">
+    <select name ="num">
+            {% for ex in entries %}
+              <option value={{ex}}>{{ex}}</option>
+              {% endfor %}
+    </select>
+    <br>
+    <hr>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary btn-block text-uppercase">Delete Log Entry</button>
+    </div>
+</form>
+{% endblock %}

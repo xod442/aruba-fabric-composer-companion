@@ -1,0 +1,98 @@
+
+
+<!-- Navigation. bar-->
+<div class="" id="home">
+       <nav class="navbar navbar-expand-xl">
+           <div class="container h-100">
+             <div class="navbar-header">
+                 <a class="navbar-brand" href="{{ url_for('main_app.main_return') }}">
+                     <img alt="antigua logo" width="80" height="80" src="{{ url_for('static', filename='assets/dog.PNG') }}">
+                 </a>
+             </div>
+               <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                   <i class="fas fa-bars tm-nav-icon"></i>
+               </button>
+
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav mx-auto h-100">
+                       <li class="nav-item">
+                           <a class="nav-link active" href="{{ url_for('main_app.main_return') }}">
+                               <i class="fas fa-tachometer-alt"></i>
+                               Dashboard
+                               <span class="sr-only">(current)</span>
+                           </a>
+                       </li>
+
+                       <li class="nav-item">
+                           <a class="nav-link" href="help">
+                               <i class="fas fa-certificate"></i>
+                               Help
+                           </a>
+                       </li>
+
+                       <li class="nav-item">
+                           <a class="nav-link" href="http://www.wookieware.com">
+                               <i class="far fa-question-circle"></i>
+                               About
+                           </a>
+                       </li>
+                       <li class="nav-item dropdown">
+
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                               <i class="far fa-file-alt"></i>
+                               <span>
+                                   User Log <i class="fas fa-angle-down"></i>
+                               </span>
+                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" href="{{ url_for('companion_app.newentry') }}">New Entry</a>
+                             <a class="dropdown-item" href="{{ url_for('companion_app.listentry') }}">List Entries</a>
+                             <a class="dropdown-item" href="{{ url_for('companion_app.deleteentry') }}">Delete Entry</a>
+                             <a class="dropdown-item" href="{{ url_for('companion_app.editentry') }}">Edit Entry</a>
+                             <a class="dropdown-item" href="{{ url_for('companion_app.cloneentry') }}">Clone Entry</a>
+                           </div>
+                       </li>
+                       <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-cog"></i>
+                               <span>
+                                  StackStorm <i class="fas fa-angle-down"></i>
+                               </span>
+                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" href="{{ url_for('companion_app.newterm') }}">Open terminal</a>
+                             <a class="dropdown-item" href="http://127.0.0.1:80" target="_blank">St2 WebUI</a>
+                           </div>
+                       </li>
+                       <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-search"></i>
+                               <span>
+                                  AFC-API <i class="fas fa-angle-down"></i>
+                               </span>
+                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" href="{{ url_for('audit_app.view_alarms') }}">List AFC Alarms</a>
+                             <a class="dropdown-item" href="{{ url_for('audit_app.view_events') }}">List AFC Events</a>
+                             <a class="dropdown-item" href="{{ url_for('lag_app.process_lags') }}">List Lags</a>
+                              <a class="dropdown-item" href="{{ url_for('lag_app.autolag') }}">Auto Lag</a>
+                              <a class="dropdown-item" href="{{ url_for('snmp_app.snmp_interface') }}">SNMP Port Info</a>
+                           </div>
+                       </li>
+                   </ul>
+                   <ul class="navbar-nav">
+                       <li class="nav-item">
+                           <a class="nav-link d-block" href="{{ url_for('main_app.main_logout') }}">
+                               <b>Logout</b>
+                           </a>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+
+       </nav>
+     </div>

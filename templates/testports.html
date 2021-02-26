@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Clone Entry{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="col-xs-10">
+    <h3>testports</h3>
+
+    <form  class="tm-edit-product-form" method="POST" action="{{ url_for('lag_app.testports')}}" role="form">
+
+    <button type="submit" class="btn btn-primary btn-block text-uppercase">testports</button>
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Companion{% endblock %}
+
+{% block content %}
+
+    <div>
+      <nav class="navbar navbar-expand-xl">
+        <div class="container h-100">
+          <a class="navbar-brand" href="index.html">
+            <img alt="companion" width="80" height="80" src="{{ url_for('static', filename='assets/dog.PNG') }}">
+            <p>'.    .'</p><h1 class="tm-site-title mb-0">Companion</h1>
+          </a>
+          <button
+            class="navbar-toggler ml-auto mr-0"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars tm-nav-icon"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container tm-mt-big tm-mb-big">
+      <div class="row">
+        <div class="col-12 mx-auto tm-login-col">
+          <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+            <div class="row">
+              <div class="col-12 text-center">
+                <h2 class="tm-block-title mb-4">Welcome to Companion</h2>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
+                  <form  method="POST" class="tm-login-form" action="{{ url_for('.main_select')}}">
+                  <div class="form-group">
+                    <label for="user">Username</label>
+                    <input
+                      name="user"
+                      type="text"
+                      class="form-control validate"
+                      id="user"
+                      value=""
+                      required
+                      placeholder="username"
+                    />
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="passwd">Password</label>
+                    <input
+                      name="passwd"
+                      type="password"
+                      class="form-control validate"
+                      id="passwd"
+                      value=""
+                      required
+                      placeholder="password"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="ipaddress">CFM IP address</label>
+                    <input
+                      name="ipaddress"
+                      type="text"
+                      class="form-control validate"
+                      id="ipaddress"
+                      value=""
+                      required
+                      placeholder="192.168.1.1"
+                    />
+                  </div>
+                  <div class="form-group mt-4">
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-block text-uppercase"
+                    >
+                      Login
+                    </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
